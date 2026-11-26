@@ -1,0 +1,81 @@
+{
+  "name": "hookseal",
+  "version": "0.1.0",
+  "description": "Verify webhook signatures from Stripe, GitHub, Shopify, Razorpay, Slack, Paddle, Lemon Squeezy, Square, Twilio and Standard Webhooks (Svix, Clerk, Resend) with one API. Constant-time, replay-protected, Web Crypto based, works on Node, Bun, Deno and edge runtimes. Zero dependencies.",
+  "keywords": [
+    "webhook",
+    "webhooks",
+    "signature",
+    "verify",
+    "hmac",
+    "stripe",
+    "github",
+    "shopify",
+    "razorpay",
+    "slack",
+    "paddle",
+    "lemonsqueezy",
+    "square",
+    "twilio",
+    "svix",
+    "standard-webhooks",
+    "clerk",
+    "resend",
+    "express",
+    "hono",
+    "nextjs",
+    "edge",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "CK Giri <ckgdev@gmail.com>",
+  "funding": "https://github.com/ckgiri/hookseal?sponsor=1",
+  "homepage": "https://github.com/ckgiri/hookseal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckgiri/hookseal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ckgiri/hookseal/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "hookseal": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc -p .",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
